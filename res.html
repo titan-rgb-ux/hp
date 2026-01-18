@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balaji Manogarane - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(120deg, #1a2a6c, #b21f1f, #1a2a6c);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 20px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: #1a2a6c;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .linkedin-link {
+            color: #4dabf7;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        
+        .linkedin-link:hover {
+            text-decoration: underline;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        section {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #1a2a6c;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+        
+        .objective p {
+            font-style: italic;
+            padding-left: 10px;
+            border-left: 3px solid #b21f1f;
+        }
+        
+        .education-item, .experience-item {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 2px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+        
+        .education-header, .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-tag {
+            background: #eef2ff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: 500;
+            color: #1a2a6c;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background: #fff8e1;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20; /* Fixed missing unit */
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 600px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .skills-container {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1>Balaji Manogarane</h1>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>xxxxxxxxxxxxx</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>xxxxxxxxxxxxx</span>
+                </div>
+            </div>
+            <a href="https://www.linkedin.com/in/balaji-manogarane-66b4ab1b3" target="_blank" class="linkedin-link">
+                <i class="fab fa-linkedin"></i> LinkedIn Profile
+            </a>
+        </header>
+        
+        <div class="content">
+            <section class="objective">
+                <h2>Career Objective</h2>
+                <p>Seeking a job/position in an organization where I can utilize and enhance my technical, time management and quick learning skills for the organizational and professional growth.</p>
+            </section>
+            
+            <section class="education">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <div class="education-header">
+                        <span>B.Tech in Electronics And Communication Engineering</span>
+                        <span>2023 - 2027</span>
+                    </div>
+                    <p>Puducherry Technological University</p>
+                    <p>CGPA: <span class="highlight">7.46</span> (till 4th semester)</p>
+                </div>
+            </section>
+            
+            <section class="skills">
+                <h2>Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-tag">C Programming</div>
+                    <div class="skill-tag">C++</div>
+                    <div class="skill-tag">MATLAB</div>
+                    <div class="skill-tag">Xilinx</div>
+                </div>
+            </section>
+            
+            <section class="interests">
+                <h2>Areas of Interest</h2>
+                <ul>
+                    <li>Arduino UNO</li>
+                    <li>Digital Electronics</li>
+                    <li>Semiconductor Devices</li>
+                </ul>
+            </section>
+            
+            <section class="certifications">
+                <h2>Certification Courses</h2>
+                <ul>
+                    <li>Introduction to Psychology – NPTEL Course (Jan – Mar 2025)</li>
+                </ul>
+            </section>
+            
+            <section class="projects">
+                <h2>Mini Project</h2>
+                <ul>
+                    <li>Implemented a number conversion system using ESP32 for binary, decimal, and hexadecimal values.</li>
+                </ul>
+            </section>
+            
+            <section class="internships">
+                <h2>Internships</h2>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span>NLC India Limited</span>
+                    </div>
+                    <ul>
+                        <li>Studied optical fiber communication and protection communication in power systems</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <span>BSNL, Cuddalore</span>
+                    </div>
+                    <ul>
+                        <li>Learned OFC, mobile communication, switching systems, and microwave transmission</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>© 2026 Balaji Manogarane | Electronics & Communication Engineer</p>
+        </footer>
+    </div>
+</body>
+</html>
