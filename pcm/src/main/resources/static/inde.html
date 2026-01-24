@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔢 Guess the Number</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body id="body">
+<div class="container">
+    <h1>🎯 Guess the Number!</h1>
+    <p class="instructions">I'm thinking of a number between 1 and 100.</p>
+
+    <div class="game-box">
+        <div id="message" class="message">Make your first guess!</div>
+
+        <form id="guessForm">
+            <input type="number" id="guess" min="1" max="100" required placeholder="Enter your guess (1-100)" autofocus>
+            <button type="submit">Guess!</button>
+        </form>
+
+        <div id="attempts">Attempts: <span id="attemptCount">0</span>/7</div>
+    </div>
+</div>
+
+<script>
+    let secretNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+    const maxAttempts = 7;
+
+    const form = document.getElementById('guessForm');
+    const messageEl = document.getElementById('message');
+    const attemptCountEl = document.getElementById('attemptCount');
+    const body = document.getElementById('body');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const guess = parseInt(document.getElementById('guess').value);
+
+        if (isNaN(guess) || guess < 1 || guess > 100) {
+            messageEl.textContent = 'Please enter a number between 1 and 100.';
+            messageEl.className = 'message invalid';
+            return;
+        }
+
+        attempts++;
+        attemptCountEl.textContent = attempts;
+
+        if (guess === secretNumber) {
+            messageEl.textContent = '🎉 Correct! You guessed it!';
+            messageEl.className = 'message win';
+            body.className = 'win';
+            disableForm();
+        } else if (attempts >= maxAttempts) {
+            messageEl.textContent = `💥 Game over! The number was ${secretNumber}.`;
+            messageEl.className = 'message lose';
+            body.className = 'lose';
+            disableForm();
+        } else if (guess > secretNumber) {
+            messageEl.textContent = 'Too high! ⬇️';
+            messageEl.className = 'message too-high';
+        } else {
+            messageEl.textContent = 'Too low! ⬆️';
+            messageEl.className = 'message too-low';
+        }
+
+        document.getElementById('guess').value = '';
+    });
+
+    function disableForm() {
+        document.getElementById('guess').disabled = true;
+        document.querySelector('button[type="submit"]').textContent = 'Play Again';
+        document.querySelector('button[type="submit"]').onclick = function() {
+            location.reload(); // Restart game
+        };
+    }
+</script>
+</body>
+</html>

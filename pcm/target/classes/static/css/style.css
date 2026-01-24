@@ -1,0 +1,224 @@
+/* 🌈 Vibrant, Animated & Playful Styles */
+:root {
+    --win-color: linear-gradient(135deg, #00b09b, #96c93d);
+    --lose-color: linear-gradient(135deg, #ff416c, #ff4b2b);
+    --playing-color: linear-gradient(135deg, #6a11cb, #2575fc);
+    --bg-light: #f9f9ff;
+    --text-dark: #2c2c2c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: var(--playing-color);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
+    transition: background 0.5s ease;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Win State */
+body.win {
+    background: var(--win-color);
+}
+
+/* Lose/Game Over State */
+body.lose {
+    background: var(--lose-color);
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 32px;
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 300% 300%;
+    animation: shine 4s infinite linear;
+}
+
+@keyframes shine {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.instructions {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.game-box {
+    background: white;
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Message styling with emoji support */
+.message {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--text-dark);
+    padding: 0 10px;
+    animation: popIn 0.4s ease-out;
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Input field */
+input[type="number"] {
+    width: 100%;
+    padding: 16px;
+    border: 3px solid #e0e0e0;
+    border-radius: 14px;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+    outline: none;
+    transition: all 0.3s;
+    background: #fafafa;
+}
+
+input[type="number"]:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 0 4px rgba(106, 17, 203, 0.2);
+}
+
+/* Buttons */
+button {
+    background: var(--playing-color);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 16px 32px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(106, 17, 203, 0.4);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(106, 17, 203, 0.6);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Win button */
+button.win-btn {
+    background: var(--win-color);
+    box-shadow: 0 4px 15px rgba(150, 201, 61, 0.4);
+}
+
+button.win-btn:hover {
+    box-shadow: 0 6px 20px rgba(150, 201, 61, 0.6);
+}
+
+/* Lose button */
+button.lose-btn {
+    background: var(--lose-color);
+    box-shadow: 0 4px 15px rgba(255, 75, 43, 0.4);
+}
+
+button.lose-btn:hover {
+    box-shadow: 0 6px 20px rgba(255, 75, 43, 0.6);
+}
+
+.attempts {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    background: #fff5f5;
+    padding: 8px 16px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+/* Dynamic message colors */
+.message.too-high {
+    color: #ff4b2b;
+}
+.message.too-low {
+    color: #00b09b;
+}
+.message.win {
+    color: #2ecc71;
+}
+.message.lose {
+    color: #e74c3c;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 24px;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    .message {
+        font-size: 1.25rem;
+        padding: 0 5px;
+    }
+    input[type="number"] {
+        padding: 14px;
+        font-size: 1.2rem;
+    }
+    button {
+        padding: 14px;
+        font-size: 1.15rem;
+    }
+}
